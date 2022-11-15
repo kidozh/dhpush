@@ -89,6 +89,7 @@
 			</item>
 		</item>
 		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="upgradefile"><![CDATA[upgrade.php]]></item>
 		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
 	</item>
 </root>
