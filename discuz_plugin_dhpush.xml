@@ -2,8 +2,8 @@
 <root>
 	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
 	<item id="Version"><![CDATA[X3.4]]></item>
-	<item id="Time"><![CDATA[2022-02-13 23:59]]></item>
-	<item id="From"><![CDATA[Discuz! Board (http://localhost/)]]></item>
+	<item id="Time"><![CDATA[2022-06-14 03:03]]></item>
+	<item id="From"><![CDATA[Test Site (http://192.168.0.145/)]]></item>
 	<item id="Data">
 		<item id="plugin">
 			<item id="available"><![CDATA[1]]></item>
@@ -48,15 +48,24 @@
 		<item id="var">
 			<item id="0">
 				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[推送调试]]></item>
+				<item id="description"><![CDATA[是否开启本地调试]]></item>
+				<item id="variable"><![CDATA[debug]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[1]]></item>
 				<item id="title"><![CDATA[推送许可]]></item>
 				<item id="description"><![CDATA[由DH 推送服务下发的许可令牌]]></item>
 				<item id="variable"><![CDATA[pushToken]]></item>
 				<item id="type"><![CDATA[text]]></item>
-				<item id="value"><![CDATA[12124151245455]]></item>
+				<item id="value"><![CDATA[aavs]]></item>
 				<item id="extra"><![CDATA[]]></item>
 			</item>
-			<item id="1">
-				<item id="displayorder"><![CDATA[0]]></item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[2]]></item>
 				<item id="title"><![CDATA[允许推送的用户群]]></item>
 				<item id="description"><![CDATA[哪些用户可以收到推送]]></item>
 				<item id="variable"><![CDATA[allowPushGroups]]></item>

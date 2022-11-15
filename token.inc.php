@@ -67,16 +67,19 @@ else{
                         "packageId" => $packageId
                     ];
 
-                    $tokenExistResult = DB::fetch_first("SELECT token FROM ".DB::table("dhpush_token")." WHERE uid=".$uid." AND token='". $token."'");
-                    if($tokenExistResult.length == 0){
+                    $tokenExistResult = DB::fetch_first("SELECT id,token FROM ".DB::table("dhpush_token")." WHERE uid=".$uid." AND token= '". $token."'");
+
+                    if($tokenExistResult != null){
                         // insert the token information to database, return id and replace
-                        DB::insert("dhpush_token", $insertTokenObj, true, true);
-                        $result = [
-                            "result" => "success",
-                            "formhash" => formhash(),
-                            "data" => $insertTokenObj
-                        ];
+                        $insertTokenObj["id"] = $tokenExistResult["id"];
+
                     }
+                    DB::insert("dhpush_token", $insertTokenObj, true, true);
+                    $result = [
+                        "result" => "success",
+                        "formhash" => formhash(),
+                        "data" => $insertTokenObj
+                    ];
 
                     // then sending a message via FCM
                     error_log(print_r($result, TRUE));
