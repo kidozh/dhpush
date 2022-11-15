@@ -1,5 +1,7 @@
 <?php
 
+error_log(print_r("Upgrading DHPush plugin...", TRUE));
+
 # update the hook for mobile message
 require_once 'dhpush.lib.class.php';
 
