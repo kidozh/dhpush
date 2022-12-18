@@ -7,12 +7,16 @@ if (!defined('IN_DISCUZ')) {
 
 function sendPostRequest($url,$jsonData){
     $curl = curl_init($url);
-
+    $request_headers = [
+        'Accept:' . "application/json",
+        'Content-type:' . "application/json"
+    ];
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($curl, CURLOPT_HTTPHEADER, array("Content-type: application/json"));
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $request_headers);
     curl_setopt($curl, CURLOPT_POST, true);
     curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($jsonData));
     curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+    error_log(print_r(json_encode($jsonData), TRUE));
     // set a very low timeout to avoid blocking
     $json_response = curl_exec($curl);
     curl_close($curl);
@@ -50,7 +54,7 @@ class plugin_dhpush_forum extends plugin_dhpush
 
         $tid = $params['values']['tid'];
         $pid = $params['values']['pid'];
-        $this->send_push_information($tid, $pid);
+        $this->send_reply_push_information($tid, $pid);
 
 
     }
@@ -71,14 +75,13 @@ class plugin_dhpush_forum extends plugin_dhpush
         error_log(print_r($variables, TRUE));
         //
         $tid = $variables['tid'];
-
         $pid = $variables['pid'];
-        $this->send_push_information($tid, $pid);
+        $this->send_reply_push_information($tid, $pid);
 
 
     }
 
-    function send_push_information($tid,$pid){
+    function send_reply_push_information($tid,$pid){
         global $_G;
         $SEND_URL_PREFIX = "https://dhpushservice.kidozh.com";
         $SEND_URL_PATH = "/v1/push/reply";

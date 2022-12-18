@@ -70,4 +70,26 @@ class DHPushHook{
         updatecache('setting');
         return $apihook;
     }
+
+    public static function register_all_hooks(){
+        DHPushHook::update_api_hook(
+            array(
+                # plugin array starts here
+                array('sendreply_variables' =>
+                    array('plugin' => 'dhpush',
+                        'include' => 'dhpush.class.php',
+                        'class' => 'plugin_dhpush_forum',
+                        'method' => 'sendreply_variables'
+                    )
+                ),
+                array('viewthread_variables' =>
+                    array('plugin' => 'dhpush',
+                        'include' => 'variables.class.php',
+                        'class' => 'Variable',
+                        'method' => 'viewthread_variables'
+                    )
+                ),
+            )
+        );
+    }
 }
