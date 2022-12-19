@@ -86,7 +86,8 @@ class DHPushHook{
                     array('plugin' => 'dhpush',
                         'include' => 'variables.class.php',
                         'class' => 'Variable',
-                        'method' => 'viewthread_variables'
+                        'method' => 'viewthread_variables',
+                        'variables' => 'useip'
                     )
                 ),
             )

@@ -10,7 +10,7 @@ class Variable{
     function viewthread_variables(&$variables){
         global $_G;
         // add ip config
-        $variables['postlist'] = array_values($variables['postlist']);
+        //$variables['postlist'] = array_values($variables['postlist']);
         foreach($variables['postlist'] as $key => $post) {
             // get user ip
             $pid = $post["pid"];
@@ -18,8 +18,10 @@ class Variable{
             $ipAddr = $userResult["useip"];
             $ipLocation = convertip($ipAddr);
             $variables['postlist'][$key]["ipLocation"] = $ipLocation;
-            error_log(print_r($ipLocation, TRUE));
+
         }
+        error_log(print_r($variables, TRUE));
+        return $variables;
 
 
     }
