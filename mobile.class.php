@@ -38,7 +38,7 @@ class mobileplugin_dhpush_forum extends mobileplugin_dhpush
         $SEND_URL_PREFIX = "https://dhp.kidozh.com/";
         $SEND_URL_PATH = "v1/push/reply/";
         if ($DEBUG) {
-            $SEND_URL_PREFIX = "http://localhost:8888/";
+            $SEND_URL_PREFIX = "http://localhost:9000/";
 
         }
 

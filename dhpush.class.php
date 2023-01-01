@@ -83,7 +83,7 @@ class plugin_dhpush_forum extends plugin_dhpush
 
     function send_reply_push_information($tid,$pid){
         global $_G;
-        $SEND_URL_PREFIX = "https://dhpushservice.kidozh.com";
+        $SEND_URL_PREFIX = "https://dhp.kidozh.com";
         $SEND_URL_PATH = "/v1/push/reply";
         if ($this->debug) {
             $SEND_URL_PREFIX = "http://localhost:9000";
