@@ -2,7 +2,7 @@
 <root>
 	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
 	<item id="Version"><![CDATA[X3.4]]></item>
-	<item id="Time"><![CDATA[2022-06-14 03:03]]></item>
+	<item id="Time"><![CDATA[2022-12-24 06:28]]></item>
 	<item id="From"><![CDATA[Test Site (http://192.168.0.145/)]]></item>
 	<item id="Data">
 		<item id="plugin">
@@ -52,7 +52,7 @@
 				<item id="description"><![CDATA[是否开启本地调试]]></item>
 				<item id="variable"><![CDATA[debug]]></item>
 				<item id="type"><![CDATA[radio]]></item>
-				<item id="value"><![CDATA[0]]></item>
+				<item id="value"><![CDATA[1]]></item>
 				<item id="extra"><![CDATA[]]></item>
 			</item>
 			<item id="1">
@@ -87,9 +87,18 @@
 					<item id="12"><![CDATA[3]]></item>
 				</item>
 			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[验证身份代码]]></item>
+				<item id="description"><![CDATA[此处填写申请时的验证代码，推送服务器会通过此代码确认申请者拥有站点的权限]]></item>
+				<item id="variable"><![CDATA[checkCode]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[TESTF]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
 		</item>
 		<item id="installfile"><![CDATA[install.php]]></item>
-		<item id="upgradefile"><![CDATA[upgrade.php]]></item>
 		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+		<item id="upgradefile"><![CDATA[upgrade.php]]></item>
 	</item>
 </root>
