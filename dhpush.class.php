@@ -11,16 +11,18 @@ function sendPostRequest($url,$jsonData){
         'Accept:' . "application/json",
         'Content-type:' . "application/json"
     ];
+    curl_setopt($curl, CURLOPT_URL, $url);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($curl, CURLOPT_HTTPHEADER, $request_headers);
     curl_setopt($curl, CURLOPT_POST, true);
     curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($jsonData));
-    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
     error_log(print_r(json_encode($jsonData), TRUE));
     // set a very low timeout to avoid blocking
-    $json_response = curl_exec($curl);
+    $response = curl_exec($curl);
     curl_close($curl);
-    error_log(print_r($json_response, TRUE));
+    error_log(print_r("RES", TRUE));
+    error_log(print_r($response, TRUE));
+    return $response;
 }
 
 class plugin_dhpush {}
@@ -159,7 +161,7 @@ class plugin_dhpush_forum extends plugin_dhpush
 
                     sendPostRequest($SEND_URL_WITH_PARAMTER,$data);
                     error_log(print_r($data, TRUE));
-                    error_log(print_r($SEND_URL, TRUE));
+                    error_log(print_r($SEND_URL_WITH_PARAMTER, TRUE));
                 }
 
 
